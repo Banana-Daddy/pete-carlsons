@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pete Carlson's Golf & Tennis — Mockup Directions</title>
+<meta name="description" content="Two creative directions for Pete Carlson's Golf & Tennis. Palm Desert, since 1981.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,30..100;1,9..144,300..900,30..100&family=Instrument+Sans:wght@400;500;600&family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Instrument Sans', system-ui, sans-serif;
+    background: #F0E6D2;
+    color: #1F2B25;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  .wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+  }
+  @media (min-width: 768px) { .wrap { padding: 6rem 3rem; } }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #C65D3B;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .eyebrow::before {
+    content: ''; width: 2rem; height: 1px; background: #C65D3B; display: block;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-variation-settings: 'SOFT' 50;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+  h1 em {
+    font-style: italic;
+    font-variation-settings: 'SOFT' 100;
+    color: #C65D3B;
+  }
+  .intro {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    line-height: 1.5;
+    max-width: 48rem;
+    color: #1F2B25;
+    opacity: 0.82;
+    margin-bottom: 3rem;
+  }
+  .directions {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+  }
+  @media (min-width: 900px) {
+    .directions { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+
+  .card {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border: 1px solid rgba(31, 43, 37, 0.12);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s;
+  }
+  @media (min-width: 900px) {
+    .card { aspect-ratio: 3 / 4; }
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px rgba(31, 43, 37, 0.25);
+  }
+
+  .card-inner {
+    position: absolute; inset: 0;
+    padding: 2rem;
+    display: flex; flex-direction: column; justify-content: space-between;
+    transition: transform 0.5s;
+  }
+  @media (min-width: 768px) {
+    .card-inner { padding: 2.5rem; }
+  }
+
+  /* Editorial card */
+  .card-editorial {
+    background: #F0E6D2;
+  }
+  .card-editorial::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url('https://petecarlsonsgolf.com/wp-content/uploads/2020/12/pete-carlsons-golf-and-tennis-store.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.25;
+    filter: sepia(0.15) saturate(1.1);
+    transition: opacity 0.6s, transform 0.8s;
+  }
+  .card-editorial:hover::before { opacity: 0.4; transform: scale(1.03); }
+
+  .card-editorial .num {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-variation-settings: 'SOFT' 100;
+    font-size: 4rem;
+    line-height: 1;
+    color: #C65D3B;
+    opacity: 0.8;
+  }
+  .card-editorial .title {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-variation-settings: 'SOFT' 50;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: #1F2B25;
+    margin-bottom: 0.6rem;
+  }
+  .card-editorial .title em {
+    font-style: italic;
+    font-variation-settings: 'SOFT' 100;
+    color: #C65D3B;
+  }
+  .card-editorial .vibe {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #1F2B25;
+    opacity: 0.8;
+    line-height: 1.55;
+    max-width: 22rem;
+    margin-bottom: 1.25rem;
+  }
+  .card-editorial .tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8B7355;
+  }
+  .card-editorial .view {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #1F2B25;
+    border-bottom: 1px solid #1F2B25;
+    padding-bottom: 0.3rem;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    align-self: flex-start;
+  }
+  .card-editorial .view .arrow { transition: transform 0.3s; }
+  .card-editorial:hover .view .arrow { transform: translateX(4px); }
+
+  /* Full Court card */
+  .card-court {
+    background: #1C2B23;
+    color: #F8F7F1;
+  }
+  .card-court::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url('https://petecarlsonsgolf.com/wp-content/uploads/2022/03/mens-golf-shoes-wall-1.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    filter: saturate(1.1);
+    transition: opacity 0.6s, transform 0.8s;
+  }
+  .card-court::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(28, 43, 35, 0.3) 0%, rgba(28, 43, 35, 0.85) 100%);
+  }
+  .card-court:hover::before { opacity: 0.55; transform: scale(1.03); }
+
+  .card-court .num {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 1;
+    color: #D8E649;
+    letter-spacing: -0.04em;
+    position: relative; z-index: 2;
+  }
+  .card-court .title {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.75rem, 4.5vw, 3.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: #F8F7F1;
+    margin-bottom: 0.6rem;
+    position: relative; z-index: 2;
+  }
+  .card-court .title .pop { color: #D8E649; }
+  .card-court .vibe {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #F8F7F1;
+    opacity: 0.8;
+    line-height: 1.55;
+    max-width: 22rem;
+    margin-bottom: 1.25rem;
+    position: relative; z-index: 2;
+  }
+  .card-court .tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #D8E649;
+    opacity: 0.9;
+    position: relative; z-index: 2;
+  }
+  .card-court .view {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #D8E649;
+    border-bottom: 1px solid #D8E649;
+    padding-bottom: 0.3rem;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    align-self: flex-start;
+    position: relative; z-index: 2;
+  }
+  .card-court .view .arrow { transition: transform 0.3s; }
+  .card-court:hover .view .arrow { transform: translate(3px, -3px); }
+
+  .card-inner-inner {
+    position: relative; z-index: 2;
+  }
+
+  .top-bar {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    position: relative; z-index: 2;
+  }
+
+  .meta {
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+  }
+  .chip {
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.6rem;
+    border-radius: 9999px;
+    background: rgba(31, 43, 37, 0.08);
+    color: #1F2B25;
+  }
+  .card-court .chip {
+    background: rgba(216, 230, 73, 0.15);
+    color: #D8E649;
+  }
+
+  footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8B7355;
+    display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
+
+  .intro-meta {
+    display: flex; gap: 2rem; flex-wrap: wrap;
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #8B7355;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(139, 115, 85, 0.25);
+  }
+  .intro-meta strong {
+    color: #1F2B25;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">Mockup study · Banana Bytes</div>
+    <h1>Pete Carlson's.<br>Two <em>directions</em>,<br>same Highway 111.</h1>
+    <p class="intro">
+      A forty-five-year institution on Palm Desert's Highway 111 — family-owned, fourteen thousand square feet, the Coachella Valley's only full-line golf, tennis, and pickleball shop. Below, two distinct redesigns built from the same research. Pick one, take both, or mix and match.
+    </p>
+
+    <div class="intro-meta">
+      <div><span>Brand</span><br><strong>Pete Carlson's Golf & Tennis</strong></div>
+      <div><span>Location</span><br><strong>Palm Desert, CA</strong></div>
+      <div><span>Since</span><br><strong>1981</strong></div>
+      <div><span>Directions</span><br><strong>02</strong></div>
+    </div>
+
+    <div class="directions">
+      <!-- Direction 1 -->
+      <a href="direction-editorial.html" class="card card-editorial">
+        <div class="card-inner">
+          <div class="top-bar">
+            <div class="num">I</div>
+            <div class="meta"><span class="chip">Editorial</span><span class="chip">Heritage</span></div>
+          </div>
+          <div class="card-inner-inner">
+            <div class="tag">Direction One</div>
+            <div class="title">Pete &amp; <em>Edna</em>.</div>
+            <p class="vibe">A love letter to forty-five years in the desert. Warm terracotta, serif display, editorial chapter structure, storefront as hero. Written like a Coachella Valley feature in Monocle.</p>
+            <div class="view">View direction <span class="arrow">→</span></div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Direction 2 -->
+      <a href="direction-full-court.html" class="card card-court">
+        <div class="card-inner">
+          <div class="top-bar">
+            <div class="num">II</div>
+            <div class="meta"><span class="chip">Bento</span><span class="chip">Sport Retail</span></div>
+          </div>
+          <div class="card-inner-inner">
+            <div class="tag">Direction Two</div>
+            <div class="title">FULL <span class="pop">COURT</span>.</div>
+            <p class="vibe">Sport-first, confident, BNP Paribas-adjacent. Optic yellow, clay, and deep court green. Bento grid, endless brand marquee, bold condensed display. Built for a retailer that stocks every ball on the wall.</p>
+            <div class="view">View direction <span class="arrow">↗</span></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div>Pete Carlson's · Palm Desert · Since 1981</div>
+    <div><a href="https://instagram.com/BananaCares" target="_blank" rel="noopener">Mockup by Banana Bytes</a></div>
+  </footer>
+</body>
+</html>

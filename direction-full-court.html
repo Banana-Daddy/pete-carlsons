@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pete Carlson's — Golf, Tennis, Pickleball · Palm Desert</title>
+<meta name="description" content="The Coachella Valley's only full-line racquet and club shop. 100+ brands, certified stringing, custom fits. Highway 111, Palm Desert, since 1981.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Unbounded', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          sans: ['Space Grotesk', 'ui-sans-serif', 'system-ui', 'sans-serif']
+        },
+        colors: {
+          optic: '#D8E649',
+          'optic-deep': '#B8C433',
+          bone: '#F8F7F1',
+          'bone-2': '#EEEBE0',
+          court: '#1C2B23',
+          'court-light': '#2D3F33',
+          clay: '#A8472C',
+          'clay-deep': '#8A391F'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Space Grotesk', sans-serif; background: #F8F7F1; color: #1C2B23; -webkit-font-smoothing: antialiased; }
+  .font-display { font-family: 'Unbounded', sans-serif; }
+  .mono-cap { font-family: 'Space Grotesk', monospace; letter-spacing: 0.18em; text-transform: uppercase; }
+  .huge-title {
+    font-size: clamp(3rem, 14vw, 10rem);
+    line-height: 0.86;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+  }
+  .section-title {
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+  .marquee-track {
+    animation: marquee 30s linear infinite;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .fade-in {
+    opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-in.is-visible { opacity: 1; transform: translateY(0); }
+  .bento-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .bento-card:hover {
+    transform: translateY(-4px);
+  }
+  .arrow-cta:hover .arrow { transform: translate(4px, -4px); }
+  .arrow { transition: transform 0.3s ease; display: inline-block; }
+  .court-bg { background: #1C2B23; color: #F8F7F1; }
+  .clay-bg { background: #A8472C; color: #F8F7F1; }
+  .optic-bg { background: #D8E649; color: #1C2B23; }
+  .img-fallback {
+    background: #2D3F33;
+    display: flex; align-items: center; justify-content: center;
+    color: #D8E649; font-family: 'Unbounded', sans-serif; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem;
+  }
+  .light-fallback {
+    background: #EEEBE0;
+    display: flex; align-items: center; justify-content: center;
+    color: #A8472C; font-family: 'Unbounded', sans-serif; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem;
+  }
+  .sticker {
+    display: inline-block; padding: 0.35rem 0.75rem; border-radius: 9999px;
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+  }
+  .ball-dot {
+    display: inline-block; width: 0.7em; height: 0.7em; border-radius: 50%;
+    background: #D8E649; vertical-align: middle; margin: 0 0.25em;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.15);
+  }
+  .line-cta {
+    position: relative; display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.75rem 0; border-bottom: 1px solid currentColor;
+    font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; object-fit: cover; width: 100%; height: 100%;
+    filter: saturate(1.1) contrast(1.05);
+  }
+  @media (min-width: 768px) {
+    .grid-featured { grid-template-columns: 2fr 1fr; }
+  }
+  .stat-number {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+  }
+  /* Ticker variations */
+  .ticker-small {
+    animation: marquee 40s linear infinite;
+  }
+  .ticker-fast {
+    animation: marquee 22s linear infinite;
+  }
+  /* Optic yellow highlight */
+  .optic-underline {
+    background: linear-gradient(180deg, transparent 60%, #D8E649 60%);
+    padding: 0 0.1em;
+  }
+  /* Court stripe */
+  .court-stripe {
+    background:
+      repeating-linear-gradient(90deg, transparent 0, transparent 99px, rgba(216,230,73,0.15) 99px, rgba(216,230,73,0.15) 100px);
+  }
+  /* SVG racquet icon */
+  .icon { width: 1.25em; height: 1.25em; display: inline-block; vertical-align: middle; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- Top bar -->
+<div class="court-bg mono-cap text-[0.68rem] py-2.5 px-4 text-center" style="color: #D8E649;">
+  <span>Palm Desert</span>
+  <span class="mx-2 opacity-50">●</span>
+  <span>(760) 568-3263</span>
+  <span class="hidden md:inline"><span class="mx-2 opacity-50">●</span><span>Mon–Sat 9–6 · Sun 9–5</span></span>
+  <span class="mx-2 opacity-50">●</span>
+  <span style="color:#F8F7F1;">Est. 1981</span>
+</div>
+
+<!-- Nav -->
+<nav class="bg-bone border-b border-court/10 sticky top-0 z-40 backdrop-blur">
+  <div class="max-w-[1400px] mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3">
+      <span class="font-display font-black text-court text-lg md:text-xl tracking-tight leading-none">PETE CARLSON'S</span>
+      <span class="hidden md:inline-flex gap-1 items-center mono-cap text-[0.6rem] text-court/60 border-l border-court/20 pl-3">
+        <span>Golf</span><span class="text-optic-deep">●</span><span>Tennis</span><span class="text-optic-deep">●</span><span>Pickleball</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 mono-cap text-[0.7rem] text-court/80">
+      <a href="#departments" class="hover:text-clay transition">Departments</a>
+      <a href="#services" class="hover:text-clay transition">Services</a>
+      <a href="#events" class="hover:text-clay transition">Events</a>
+      <a href="#story" class="hover:text-clay transition">Story</a>
+      <a href="#visit" class="hover:text-clay transition">Visit</a>
+    </div>
+    <a href="tel:17605683263" class="mono-cap text-[0.68rem] bg-court text-bone px-4 py-2.5 hover:bg-clay transition">Call shop</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="top" class="relative overflow-hidden bg-court court-stripe">
+  <div class="relative max-w-[1400px] mx-auto px-5 md:px-8 pt-16 md:pt-24 pb-12 md:pb-20">
+    <div class="flex flex-wrap gap-2 mb-8">
+      <span class="sticker optic-bg">Est. 1981</span>
+      <span class="sticker border border-optic/40 text-optic">Palm Desert, CA</span>
+      <span class="sticker border border-bone/20 text-bone/80">14,000 sq ft</span>
+    </div>
+    <h1 class="huge-title font-display text-bone">
+      GOLF.<br>
+      <span class="text-optic">TENNIS.</span><br>
+      PICKLE<span class="optic-underline text-court">BALL</span>.
+    </h1>
+    <div class="mt-10 md:mt-14 grid md:grid-cols-12 gap-8 items-end">
+      <div class="md:col-span-7">
+        <p class="text-lg md:text-2xl text-bone/85 max-w-2xl leading-snug font-light">
+          Forty-five years on Highway 111. One hundred-plus brands under one roof. The only full-line golf, tennis, and pickleball shop in the Coachella Valley — and the bench work the big boxes contract out.
+        </p>
+      </div>
+      <div class="md:col-span-5 flex flex-wrap gap-3 md:justify-end">
+        <a href="#departments" class="optic-bg text-court mono-cap text-xs px-6 py-4 hover:bg-bone transition arrow-cta">
+          Shop departments <span class="arrow">↗</span>
+        </a>
+        <a href="#visit" class="border border-bone/40 text-bone mono-cap text-xs px-6 py-4 hover:bg-bone hover:text-court transition">
+          Find us
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero image strip -->
+  <div class="relative">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-optic/30">
+      <div class="aspect-[3/4] md:aspect-square relative overflow-hidden">
+        <img src="https://petecarlsonsgolf.com/wp-content/uploads/2022/03/mens-golf-shoes-wall-1.jpg"
+             alt="Shoe wall"
+             class="hero-bg" loading="lazy"
+             onerror="this.parentElement.classList.add('img-fallback'); this.remove();">
+      </div>
+      <div class="aspect-[3/4] md:aspect-square relative overflow-hidden">
+        <img src="https://petecarlsonsgolf.com/wp-content/uploads/2020/12/golf-club-dept-photo-1.jpg"
+             alt="Golf clubs"
+             class="hero-bg" loading="lazy"
+             onerror="this.parentElement.classList.add('img-fallback'); this.remove();">
+      </div>
+      <div class="aspect-[3/4] md:aspect-square relative overflow-hidden">
+        <img src="https://petecarlsonsgolf.com/wp-content/uploads/2019/09/tennnis-racket-image-1.jpg"
+             alt="Tennis racquets"
+             class="hero-bg" loading="lazy"
+             onerror="this.parentElement.classList.add('img-fallback'); this.remove();">
+      </div>
+      <div class="aspect-[3/4] md:aspect-square relative overflow-hidden">
+        <img src="https://petecarlsonsgolf.com/wp-content/uploads/2019/09/tennis-strings-1.jpg"
+             alt="Stringing bench"
+             class="hero-bg" loading="lazy"
+             onerror="this.parentElement.classList.add('img-fallback'); this.remove();">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Brand marquee -->
+<section class="optic-bg py-6 md:py-8 overflow-hidden border-b-4 border-court">
+  <div class="flex items-center gap-6 mb-3 px-5 md:px-8 max-w-[1400px] mx-auto">
+    <span class="mono-cap text-[0.7rem] text-court font-semibold">100+ Brands, every department</span>
+    <span class="flex-1 h-px bg-court/30"></span>
+    <span class="mono-cap text-[0.7rem] text-court/70">Scroll ↓</span>
+  </div>
+  <div class="marquee-track flex gap-10 md:gap-14 whitespace-nowrap font-display font-black text-court" style="width: max-content; font-size: clamp(1.5rem, 4vw, 2.75rem);">
+    <span>TITLEIST</span><span class="text-clay">●</span>
+    <span>BABOLAT</span><span class="text-clay">●</span>
+    <span>PING</span><span class="text-clay">●</span>
+    <span>HEAD</span><span class="text-clay">●</span>
+    <span>TAYLORMADE</span><span class="text-clay">●</span>
+    <span>WILSON</span><span class="text-clay">●</span>
+    <span>CALLAWAY</span><span class="text-clay">●</span>
+    <span>YONEX</span><span class="text-clay">●</span>
+    <span>MIZUNO</span><span class="text-clay">●</span>
+    <span>SELKIRK</span><span class="text-clay">●</span>
+    <span>ONIX</span><span class="text-clay">●</span>
+    <span>CLEVELAND</span><span class="text-clay">●</span>
+    <span>SRIXON</span><span class="text-clay">●</span>
+    <span>DUNLOP</span><span class="text-clay">●</span>
+    <span>COBRA</span><span class="text-clay">●</span>
+    <span>FOOTJOY</span><span class="text-clay">●</span>
+    <span>BUSHNELL</span><span class="text-clay">●</span>
+    <span>GARMIN</span><span class="text-clay">●</span>
+    <span>XXIO</span><span class="text-clay">●</span>
+    <span>TECNIFIBRE</span><span class="text-clay">●</span>
+    <span>PRO KENNEX</span><span class="text-clay">●</span>
+    <!-- dupe -->
+    <span>TITLEIST</span><span class="text-clay">●</span>
+    <span>BABOLAT</span><span class="text-clay">●</span>
+    <span>PING</span><span class="text-clay">●</span>
+    <span>HEAD</span><span class="text-clay">●</span>
+    <span>TAYLORMADE</span><span class="text-clay">●</span>
+    <span>WILSON</span><span class="text-clay">●</span>
+    <span>CALLAWAY</span><span class="text-clay">●</span>
+    <span>YONEX</span><span class="text-clay">●</span>
+    <span>MIZUNO</span><span class="text-clay">●</span>
+    <span>SELKIRK</span><span class="text-clay">●</span>
+    <span>ONIX</span><span class="text-clay">●</span>
+    <span>CLEVELAND</span><span class="text-clay">●</span>
+    <span>SRIXON</span><span class="text-clay">●</span>
+    <span>DUNLOP</span><span class="text-clay">●</span>
+    <span>COBRA</span><span class="text-clay">●</span>
+    <span>FOOTJOY</span><span class="text-clay">●</span>
+    <span>BUSHNELL</span><span class="text-clay">●</span>
+    <span>GARMIN</span><span class="text-clay">●</span>
+    <span>XXIO</span><span class="text-clay">●</span>
+    <span>TECNIFIBRE</span><span class="text-clay">●</span>
+    <span>PRO KENNEX</span><span class="text-clay">●</span>
+  </div>
+</section>
+
+<!-- Departments — Bento -->
+<section id="departments" class="bg-bone py-20 md:py-28">
+  <div class="max-w-[1400px] mx-auto px-5 md:px-8">
+    <div class="flex items-end justify-between mb-10 md:mb-14 flex-wrap gap-4">
+      <div>
+        <div class="mono-cap text-[0.7rem] text-clay mb-3">● 01 · Departments</div>
+        <h2 class="section-title font-display text-court">Three sports.<br>One floor.</h2>
+      </div>
+      <p class="text-court/70 max-w-sm text-base md:text-lg leading-snug">
+        Over a dozen departments. Deep enough that tour pros shop here during BNP Paribas Open week.
+      </p>
+    </div>
+
+    <!-- Bento grid -->
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-3 md:gap-4">
+      <!-- Golf — largest -->
+      <a href="#" class="bento-card md:col-span-4 md:row-span-2 relative overflow-hidden bg-court-light aspect-[4/3] md:aspect-auto min-h-[420px] md:min-h-[560px] group">
+        <img src="https://petecarlsonsgolf.com/wp-content/uploads/2019/09/front-page-golf-dept.jpg"
+             alt="Golf department"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-[700ms]"
+             loading="lazy"
+             onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback');">
+        <div class="absolute inset-0 bg-gradient-to-t from-court via-court/60 to-transparent"></div>
+        <div class="absolute inset-0 p-6 md:p-10 flex flex-col justify-between">
+          <div class="flex justify-between items-start">
+            <span class="sticker optic-bg">01</span>
+            <span class="mono-cap text-[0.7rem] text-bone/70">~2,500 clubs</span>
+          </div>
+          <div>
+            <div class="mono-cap text-[0.7rem] text-optic mb-2">Department</div>
+            <h3 class="font-display text-bone font-black text-4xl md:text-6xl leading-[0.9] mb-3">GOLF</h3>
+            <p class="text-bone/80 text-sm md:text-base max-w-md mb-4">
+              Titleist. Ping. TaylorMade. Callaway. Mizuno. Cleveland. Srixon. XXIO. Cobra. Wilson. A fairway oasis of clubs, bags, balls, gloves, rangefinders.
+            </p>
+            <span class="line-cta text-optic">Browse golf <span class="arrow">↗</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Tennis -->
+      <a href="#" class="bento-card md:col-span-2 relative overflow-hidden bg-clay aspect-square md:aspect-auto min-h-[260px] md:min-h-[270px] group">
+        <img src="https://petecarlsonsgolf.com/wp-content/uploads/2019/09/front-page-tennis-dept.jpg"
+             alt="Tennis department"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-[700ms] mix-blend-multiply opacity-90"
+             loading="lazy"
+             onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback');">
+        <div class="absolute inset-0 bg-gradient-to-t from-clay-deep via-clay/70 to-transparent"></div>
+        <div class="absolute inset-0 p-5 md:p-7 flex flex-col justify-between">
+          <div class="flex justify-between items-start">
+            <span class="sticker bg-bone text-clay">02</span>
+          </div>
+          <div>
+            <div class="mono-cap text-[0.65rem] text-bone/80 mb-1">Department</div>
+            <h3 class="font-display text-bone font-black text-3xl md:text-4xl leading-[0.9] mb-2">TENNIS</h3>
+            <p class="text-bone/85 text-sm mb-3">Babolat · Head · Wilson · Yonex · Dunlop. Demo racquets out back.</p>
+            <span class="line-cta text-bone">Racquet wall <span class="arrow">↗</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Pickleball -->
+      <a href="#" class="bento-card md:col-span-2 relative overflow-hidden optic-bg aspect-square md:aspect-auto min-h-[260px] md:min-h-[270px] group">
+        <div class="absolute inset-0 p-5 md:p-7 flex flex-col justify-between">
+          <div class="flex justify-between items-start">
+            <span class="sticker bg-court text-optic">03</span>
+            <span class="mono-cap text-[0.65rem] text-court/60">Growing fast</span>
+          </div>
+          <div>
+            <div class="mono-cap text-[0.65rem] text-clay mb-1">Department</div>
+            <h3 class="font-display text-court font-black text-3xl md:text-4xl leading-[0.9] mb-2">PICKLE<br>BALL</h3>
+            <p class="text-court/80 text-sm mb-3">Selkirk · ONIX · HEAD · Babolat · Franklin · Gamma · Wilson.</p>
+            <span class="line-cta text-court">Paddle wall <span class="arrow">↗</span></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Apparel -->
+      <a href="#" class="bento-card md:col-span-3 relative overflow-hidden bg-court-light aspect-[3/2] md:aspect-auto min-h-[260px] md:min-h-[300px] group">
+        <img src="https://petecarlsonsgolf.com/wp-content/uploads/2022/04/mens-golf-apparel-department-image-01.jpg"
+             alt="Apparel"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-[700ms]"
+             loading="lazy"
+             onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback');">
+        <div class="absolute inset-0 bg-gradient-to-t from-court/85 via-court/30 to-transparent"></div>
+        <div class="absolute inset-0 p-5 md:p-7 flex flex-col justify-between">
+          <div><span class="sticker border border-bone/40 text-bone">04</span></div>
+          <div>
+            <div class="mono-cap text-[0.65rem] text-optic mb-1">Department</div>
+            <h3 class="font-display text-bone font-black text-2xl md:text-3xl leading-[0.9] mb-2">APPAREL</h3>
+            <p class="text-bone/80 text-sm">Jamie Sadock · Travis Mathew · Nike · Adidas · Cutter & Buck · FootJoy · Lucky in Love.</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Footwear -->
+      <a href="#" class="bento-card md:col-span-3 relative overflow-hidden bg-court aspect-[3/2] md:aspect-auto min-h-[260px] md:min-h-[300px] group">
+        <img src="https://petecarlsonsgolf.com/wp-content/uploads/2022/03/womens-golf-shoes-wall-1.jpg"
+             alt="Footwear wall"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-[700ms]"
+             loading="lazy"
+             onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback');">
+        <div class="absolute inset-0 bg-gradient-to-tr from-court via-court/50 to-transparent"></div>
+        <div class="absolute inset-0 p-5 md:p-7 flex flex-col justify-between">
+          <div><span class="sticker optic-bg">05</span></div>
+          <div>
+            <div class="mono-cap text-[0.65rem] text-optic mb-1">Department</div>
+            <h3 class="font-display text-bone font-black text-2xl md:text-3xl leading-[0.9] mb-2">FOOTWEAR</h3>
+            <p class="text-bone/80 text-sm">FootJoy · Ecco · Nike · Adidas · Asics · K-Swiss · New Balance · Puma · Walter Genuin.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Services strip -->
+<section id="services" class="court-bg py-20 md:py-28 relative overflow-hidden">
+  <div class="max-w-[1400px] mx-auto px-5 md:px-8">
+    <div class="mb-12 md:mb-16">
+      <div class="mono-cap text-[0.7rem] text-optic mb-3">● 02 · Bench Work</div>
+      <h2 class="section-title font-display text-bone max-w-3xl">What the big boxes<br>contract out, <span class="text-optic">we do here</span>.</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-start">
+      <div class="relative aspect-[4/5] md:aspect-[4/5] overflow-hidden">
+        <img src="https://petecarlsonsgolf.com/wp-content/uploads/2019/09/tennis-strings-1.jpg"
+             alt="Certified stringing bench"
+             class="absolute inset-0 w-full h-full object-cover"
+             loading="lazy"
+             onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback');">
+        <div class="absolute inset-0 bg-gradient-to-t from-court to-transparent opacity-60"></div>
+        <div class="absolute bottom-5 left-5 right-5 flex justify-between items-end">
+          <span class="mono-cap text-[0.7rem] text-optic">Certified stringers · quick turnaround</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="divide-y divide-bone/15">
+          <div class="py-5 md:py-7 flex items-baseline justify-between gap-6 group hover:pl-2 transition-all">
+            <div>
+              <div class="font-display font-bold text-bone text-xl md:text-2xl mb-1">Custom club fitting</div>
+              <div class="text-bone/60 text-sm">All major brand reps · on-site</div>
+            </div>
+            <span class="mono-cap text-[0.65rem] text-optic whitespace-nowrap">A01</span>
+          </div>
+          <div class="py-5 md:py-7 flex items-baseline justify-between gap-6 group hover:pl-2 transition-all">
+            <div>
+              <div class="font-display font-bold text-bone text-xl md:text-2xl mb-1">Racquet stringing</div>
+              <div class="text-bone/60 text-sm">Certified · quick turnaround · most strings in stock</div>
+            </div>
+            <span class="mono-cap text-[0.65rem] text-optic whitespace-nowrap">A02</span>
+          </div>
+          <div class="py-5 md:py-7 flex items-baseline justify-between gap-6 group hover:pl-2 transition-all">
+            <div>
+              <div class="font-display font-bold text-bone text-xl md:text-2xl mb-1">Shaft replacement</div>
+              <div class="text-bone/60 text-sm">Loft & lie adjustments · extensions</div>
+            </div>
+            <span class="mono-cap text-[0.65rem] text-optic whitespace-nowrap">A03</span>
+          </div>
+          <div class="py-5 md:py-7 flex items-baseline justify-between gap-6 group hover:pl-2 transition-all">
+            <div>
+              <div class="font-display font-bold text-bone text-xl md:text-2xl mb-1">Re-gripping</div>
+              <div class="text-bone/60 text-sm">Golf clubs & tennis racquets</div>
+            </div>
+            <span class="mono-cap text-[0.65rem] text-optic whitespace-nowrap">A04</span>
+          </div>
+          <div class="py-5 md:py-7 flex items-baseline justify-between gap-6 group hover:pl-2 transition-all">
+            <div>
+              <div class="font-display font-bold text-bone text-xl md:text-2xl mb-1">Grommets & balance</div>
+              <div class="text-bone/60 text-sm">Racquet customization</div>
+            </div>
+            <span class="mono-cap text-[0.65rem] text-optic whitespace-nowrap">A05</span>
+          </div>
+          <div class="py-5 md:py-7 flex items-baseline justify-between gap-6 group hover:pl-2 transition-all">
+            <div>
+              <div class="font-display font-bold text-bone text-xl md:text-2xl mb-1">Demo programs</div>
+              <div class="text-bone/60 text-sm">Golf clubs · tennis racquets · try before you buy</div>
+            </div>
+            <span class="mono-cap text-[0.65rem] text-optic whitespace-nowrap">A06</span>
+          </div>
+        </div>
+        <a href="tel:17605683263" class="line-cta text-optic mt-8 inline-flex">
+          Call the bench · (760) 568-3263 <span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Story -->
+<section id="story" class="bg-bone py-20 md:py-28">
+  <div class="max-w-[1400px] mx-auto px-5 md:px-8">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div class="md:col-span-7">
+        <div class="mono-cap text-[0.7rem] text-clay mb-3">● 03 · Story</div>
+        <h2 class="section-title font-display text-court mb-8">
+          Forty-five seasons<br>
+          in the <span class="optic-underline">desert</span>.
+        </h2>
+        <div class="space-y-5 text-court/85 text-lg leading-relaxed">
+          <p>
+            Pete and Edna Carlson opened the shop on September 10, 1981. Pete learned the trade in Oakland under Don Sherwood and followed him out to Palm Desert at the tail end of the 1970s. A year later he opened his own store a few doors down. That store has not moved since.
+          </p>
+          <p>
+            They started with golf. Tennis followed. Pickleball followed that. Today it's the only full-line racquet and club shop in the Coachella Valley — a 14,000-square-foot specialty against two PGA Tour Superstores within a mile. Same family. Same block. Five decades.
+          </p>
+        </div>
+        <div class="mt-10 grid grid-cols-3 gap-4 md:gap-8 border-t border-court/15 pt-8">
+          <div>
+            <div class="stat-number text-clay">45</div>
+            <div class="mono-cap text-[0.65rem] text-court/60 mt-2">Years on 111</div>
+          </div>
+          <div>
+            <div class="stat-number text-clay">100+</div>
+            <div class="mono-cap text-[0.65rem] text-court/60 mt-2">Brands stocked</div>
+          </div>
+          <div>
+            <div class="stat-number text-clay">14k</div>
+            <div class="mono-cap text-[0.65rem] text-court/60 mt-2">Square feet</div>
+          </div>
+        </div>
+      </div>
+      <figure class="md:col-span-5">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img src="https://petecarlsonsgolf.com/wp-content/uploads/2020/12/pete-carlsons-golf-and-tennis-store.jpg"
+               alt="Pete Carlson's storefront"
+               class="absolute inset-0 w-full h-full object-cover"
+               loading="lazy"
+               onerror="this.style.display='none'; this.parentElement.classList.add('light-fallback');">
+          <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end">
+            <span class="mono-cap text-[0.65rem] text-bone bg-court/80 px-2 py-1">The storefront · Hwy 111</span>
+          </div>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Events -->
+<section id="events" class="clay-bg py-20 md:py-28 relative overflow-hidden">
+  <div class="max-w-[1400px] mx-auto px-5 md:px-8">
+    <div class="flex items-end justify-between mb-12 md:mb-16 flex-wrap gap-4">
+      <div>
+        <div class="mono-cap text-[0.7rem] text-optic mb-3">● 04 · On the calendar</div>
+        <h2 class="section-title font-display text-bone">Community,<br>not marketing.</h2>
+      </div>
+      <p class="text-bone/85 max-w-sm text-base md:text-lg">
+        Two traditions that have outlasted most of the desert's retail churn.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+      <!-- Expo -->
+      <article class="bg-court p-6 md:p-10 relative overflow-hidden min-h-[380px] flex flex-col justify-between">
+        <div>
+          <div class="flex gap-2 mb-5">
+            <span class="sticker optic-bg">February</span>
+            <span class="sticker border border-bone/30 text-bone/80">Since c. 2006</span>
+          </div>
+          <h3 class="font-display font-black text-bone text-3xl md:text-5xl leading-[0.95] mb-5">
+            THE<br>
+            <span class="text-optic">GOLF EXPO</span>
+          </h3>
+          <p class="text-bone/80 text-base md:text-lg leading-snug mb-6 max-w-md">
+            Twenty-plus years running. Twenty-plus manufacturers. Around four thousand attendees each year. Al Geiberger — first man to shoot 59 on the PGA Tour — has been a fixture. Free, outdoor, College of the Desert driving range.
+          </p>
+        </div>
+        <div class="flex items-end justify-between border-t border-bone/15 pt-5">
+          <div>
+            <div class="mono-cap text-[0.65rem] text-optic mb-1">Location</div>
+            <div class="text-bone text-sm">73450 Fred Waring Dr, Palm Desert</div>
+          </div>
+          <div class="stat-number text-optic" style="font-size: clamp(2.5rem, 6vw, 4rem);">4k+</div>
+        </div>
+      </article>
+
+      <!-- Jazz -->
+      <article class="bg-court p-6 md:p-10 relative overflow-hidden min-h-[380px] flex flex-col justify-between">
+        <div>
+          <div class="flex gap-2 mb-5">
+            <span class="sticker bg-bone text-clay">Back patio</span>
+            <span class="sticker border border-bone/30 text-bone/80">Since 2010</span>
+          </div>
+          <h3 class="font-display font-black text-bone text-3xl md:text-5xl leading-[0.95] mb-5">
+            JAZZ<br>
+            FOR <span class="text-optic">JAZZ</span><br>
+            LOVERS
+          </h3>
+          <p class="text-bone/80 text-base md:text-lg leading-snug mb-6 max-w-md">
+            World-class jazz concerts in partnership with the American Jazz Institute (501(c)(3)). Proceeds support music education and scholarships for young musicians in the Coachella Valley.
+          </p>
+        </div>
+        <div class="flex items-end justify-between border-t border-bone/15 pt-5">
+          <div>
+            <div class="mono-cap text-[0.65rem] text-optic mb-1">Partner</div>
+            <div class="text-bone text-sm">American Jazz Institute · 501(c)(3)</div>
+          </div>
+          <div class="stat-number text-optic" style="font-size: clamp(2.5rem, 6vw, 4rem);">15+</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Visit -->
+<section id="visit" class="optic-bg py-20 md:py-28 relative overflow-hidden">
+  <div class="max-w-[1400px] mx-auto px-5 md:px-8">
+    <div class="mono-cap text-[0.7rem] text-clay mb-3">● 05 · Visit</div>
+    <h2 class="section-title font-display text-court mb-10 md:mb-14">
+      Between Portola<br>and San Luis Rey.
+    </h2>
+
+    <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+      <div class="md:col-span-7 bg-court text-bone p-6 md:p-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div class="mono-cap text-[0.65rem] text-optic mb-2">Address</div>
+            <div class="font-display font-bold text-xl md:text-2xl leading-snug mb-6">
+              73-741 Highway 111<br>
+              Palm Desert, CA 92260
+            </div>
+            <div class="mono-cap text-[0.65rem] text-optic mb-2">Phone</div>
+            <a href="tel:17605683263" class="font-display font-bold text-xl md:text-2xl hover:text-optic transition block mb-1">(760) 568-3263</a>
+            <div class="mono-cap text-[0.65rem] text-bone/60">Toll free 1 (800) 600-3263</div>
+          </div>
+          <div>
+            <div class="mono-cap text-[0.65rem] text-optic mb-2">Hours</div>
+            <dl class="space-y-2 mb-6">
+              <div class="flex justify-between border-b border-bone/15 pb-2">
+                <dt class="text-bone/70 text-sm">Mon–Sat</dt>
+                <dd class="font-display font-semibold">9 — 6</dd>
+              </div>
+              <div class="flex justify-between border-b border-bone/15 pb-2">
+                <dt class="text-bone/70 text-sm">Sunday</dt>
+                <dd class="font-display font-semibold">9 — 5</dd>
+              </div>
+              <div class="flex justify-between border-b border-bone/15 pb-2">
+                <dt class="text-bone/70 text-sm">Jul – Aug</dt>
+                <dd class="font-display font-semibold text-optic">9 — 5 · 7 days</dd>
+              </div>
+            </dl>
+            <a href="https://www.google.com/maps/place/Pete+Carlson's+Golf+%26+Tennis/@33.721,-116.3785,17z"
+               target="_blank" rel="noopener"
+               class="line-cta text-optic">
+              Open in maps <span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-5 flex flex-col gap-4">
+        <a href="tel:17605683263" class="bg-court text-bone p-6 md:p-8 hover:bg-clay transition group flex items-center justify-between">
+          <div>
+            <div class="mono-cap text-[0.65rem] text-optic mb-2">Call the shop</div>
+            <div class="font-display font-black text-2xl md:text-3xl">(760) 568-3263</div>
+          </div>
+          <span class="arrow text-optic text-3xl group-hover:translate-x-1 transition">↗</span>
+        </a>
+        <a href="https://www.instagram.com/petecarlsonsgolftennis" target="_blank" rel="noopener"
+           class="bg-bone text-court p-6 md:p-8 hover:bg-court hover:text-bone transition group flex items-center justify-between border border-court/20">
+          <div>
+            <div class="mono-cap text-[0.65rem] text-clay mb-2 group-hover:text-optic transition">Follow · Instagram</div>
+            <div class="font-display font-black text-xl md:text-2xl">@petecarlsonsgolftennis</div>
+          </div>
+          <span class="arrow text-3xl">↗</span>
+        </a>
+        <a href="https://www.facebook.com/PeteCarlsonsGolfAndTennis" target="_blank" rel="noopener"
+           class="bg-bone text-court p-6 md:p-8 hover:bg-court hover:text-bone transition group flex items-center justify-between border border-court/20">
+          <div>
+            <div class="mono-cap text-[0.65rem] text-clay mb-2 group-hover:text-optic transition">Follow · Facebook</div>
+            <div class="font-display font-black text-xl md:text-2xl">Pete Carlson's Golf & Tennis</div>
+          </div>
+          <span class="arrow text-3xl">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="court-bg pt-16 md:pt-20">
+  <div class="max-w-[1400px] mx-auto px-5 md:px-8">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-10 items-start">
+      <div class="md:col-span-5">
+        <div class="font-display font-black text-bone text-3xl md:text-4xl mb-3 leading-[0.9]">PETE<br>CARLSON'S</div>
+        <div class="mono-cap text-[0.7rem] text-optic mb-6">Golf ● Tennis ● Pickleball</div>
+        <p class="text-bone/60 max-w-md text-sm leading-relaxed">
+          Your one-stop shop for golf, tennis, and pickleball in the Coachella Valley. Family-owned by Pete and Edna Carlson since 1981.
+        </p>
+      </div>
+      <div class="md:col-span-3">
+        <div class="mono-cap text-[0.65rem] text-clay mb-4">Explore</div>
+        <ul class="space-y-2 text-bone/80 text-sm">
+          <li><a href="#departments" class="hover:text-optic transition">Departments</a></li>
+          <li><a href="#services" class="hover:text-optic transition">Bench Work</a></li>
+          <li><a href="#events" class="hover:text-optic transition">Events</a></li>
+          <li><a href="#story" class="hover:text-optic transition">Story</a></li>
+          <li><a href="#visit" class="hover:text-optic transition">Visit</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-4">
+        <div class="mono-cap text-[0.65rem] text-clay mb-4">Follow</div>
+        <ul class="space-y-2 text-bone/80 text-sm">
+          <li><a href="https://www.instagram.com/petecarlsonsgolftennis" target="_blank" rel="noopener" class="hover:text-optic transition">Instagram</a></li>
+          <li><a href="https://www.facebook.com/PeteCarlsonsGolfAndTennis" target="_blank" rel="noopener" class="hover:text-optic transition">Facebook</a></li>
+          <li><a href="https://twitter.com/petecarlsons" target="_blank" rel="noopener" class="hover:text-optic transition">Twitter / X</a></li>
+          <li><a href="https://www.youtube.com/channel/UCIi0jBf-poC6yudnx48jbKg" target="_blank" rel="noopener" class="hover:text-optic transition">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Huge wordmark -->
+    <div class="mt-16 md:mt-24 overflow-hidden border-t border-bone/15 pt-10">
+      <div class="font-display font-black text-bone/90 leading-[0.85] tracking-tighter" style="font-size: clamp(3rem, 16vw, 13rem);">
+        PALM<br>DESERT.
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between gap-3 mono-cap text-[0.65rem] text-bone/40 py-6 border-t border-bone/10 mt-6">
+      <div>© Pete Carlson's Golf & Tennis</div>
+      <div>Est. MCMLXXXI</div>
+    </div>
+  </div>
+  <div style="text-align:center; padding:1.5rem 1rem; font-size:0.7rem; letter-spacing:0.05em; opacity:0.5; background: #1C2B23; color: #F8F7F1;">
+    <a href="https://instagram.com/BananaCares" target="_blank" rel="noopener" style="text-decoration:none; color:inherit;">
+      Mockup created by Banana Bytes
+    </a>
+  </div>
+</footer>
+
+<script>
+  // Fade-in reveals
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }});
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
