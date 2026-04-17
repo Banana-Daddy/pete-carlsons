@@ -90,4 +90,5 @@ Two technical priorities for the real build:
 | Step 4: VERIFY | ~1m |
 | Step 5: BRIEF | ~1m |
 | Image Generation | 0s (none needed) |
-| **Total: Prompt to Live Link** | filled in after publish |
+| Step 6: PUBLISH | ~25s |
+| **Total: Prompt to Live Link** | **17m 45s** |
